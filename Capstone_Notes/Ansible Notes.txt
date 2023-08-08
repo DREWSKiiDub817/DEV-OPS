@@ -1,0 +1,64 @@
+ANSIBLE
+	sudo dnf update -y
+	sudo dnf install epel-release -y
+	sudo dnf install ansible -y
+	ansible --version
+
+	ansible-inventory -i inventory --list
+	ansible-playbook lab08.yml -i inventory
+
+	ansible -m ping all
+	ansible -a 'cat /etc/hosts/ all
+	
+	RHEL - sudo yum install ansible -y
+	Fedora - sudo dnf install ansible -y
+	Ubuntu - sudo apt-get install ansible -y
+	PIP - sudo pip install ansible -y
+
+### ORDER OF PRECEDENCE
+	Command Line
+	Playbook
+	Inventory
+	/etc/ansible/ansible.cfg
+	
+
+### by Default, Ansible gathers facts about system connected to
+	- Stored in a var calle 'ansible_facts'
+	- gather_facts: no
+
+::: ansible -m setup localhost | grep distribution_version
+::: ansible -i inventory -m setup web1 | grep distribution
+::: ansible -m setup web1 -i inventory > /home/thor/playbooks/web/web-facts.txt
+::: ansible -m ping -i /home/thor/playbooks/inventory all > /tmp/ansible_all.txt
+::: ansible --version > /tmp/ansible_version.txt
+::: ansible-config list
+::: ansible-config view
+::: ansible-config dump
+::: ansible -m setup localhost > /tmp/ansible_facts.txt
+::: ansible -m ping localhost > /tmp/ansible_ping.txt
+::: ansible -m command -a date -i inventory web1 > /tmp/ansible_date.txt
+::: ******* ansible-inventory -i inventory-file --list *******
+
+
+with open('devices.json', mode='w') as file:
+    file.write(json.dumps(devices_json, indent=4))
+
+
+::: cp -v /etc/ansible/ansible.cfg playbooks/
+::: ssh-keygen -t rsa -f ~/.ssh/ansible
+
+---
+- name: Ping Servers
+  hosts: all
+  tasks:
+  - ping:
+
+---
+- name: Install nginx
+  become: yes
+  become_user: 
+  hosts: all
+  tasks:
+  - yum:
+      name: nginx
+      state: latest

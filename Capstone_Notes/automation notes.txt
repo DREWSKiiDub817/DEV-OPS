@@ -1,0 +1,57 @@
+kubectl -n kube-system patch daemonset.apps/kube-vip-ds -p '{"spec": {"template": {"spec": {"nodeSelector": {"non-existing": "true"}}}}}'
+
+kubectl -n kube-system patch daemonset.apps/kube-vip-ds -p '{"spec": {"template": {"spec": {"nodeSelector": null}}}}'
+
+git rm --cached <file>
+git rm -r --cached <folder>
+
+node.longhorn.io/create-default-disk=true
+
+kubectl create secret generic -h
+kubectl create namespace <name> --dry-run=client -o yaml > <name>-namspace.yaml
+kubectl create namespace test --dry-run=client -o yaml > test-namspace.yaml
+kubectl describe <resource> <name> -n <namespace>
+
+
+kubectl delete pod <PODNAME> --grace-period=0 --force --namespace <NAMESPACE>
+sed -i "s?pool 2.rhel.pool.net.org ibust?server ${NTP_SERVER_IP} iburst?" /etc/chrony.conf
+
+k get secret -n kube-system
+k get addon -n kube-system
+
+rke2-killall.sh
+rke2-uninstall.sh
+
+ps aux | grep rke2-install.sh
+
+chronyc sources
+systemctl status chronyd.service
+
+tar -czvf rke2-stud-7.tar.gz rke2/
+
+k get svc -A
+NOTE ETERNAL-IP for application
+
+CMD PROMPT
+echo %cd%
+/c/Users/stud7/Desktop/Mod_6/Kube/stud7-kubernetes
+docker run -it -v /c/Users/stud7/Desktop/Mod_6/Kube/stud7-kubernetes:/mnt ubuntu:latest
+cd /mnt
+
+tar -czvf rke2-stud-7.tar.gz rke2/
+exit
+
+GITBASH
+scp -r rke2-stud-7.tar.gz root@172.16.7.51:/home/stud7/
+scp -r rke2-stud-7.tar.gz root@172.16.7.52:/home/stud7/
+
+ON SERVER1
+cd /home/stud7/
+ls -al
+tar xzvf rke2-stud-7.tar.gz -C /usr/lib/
+/usr/lib/rke2/scripts/rke2-install-server.sh
+or
+/usr/lib/rke2/scripts/rke2-install-agent.sh
+
+kubectl delete addon apache-stud7-chart -n apache-stud7
+k delete addon apache-stud7-chart -n kube-system

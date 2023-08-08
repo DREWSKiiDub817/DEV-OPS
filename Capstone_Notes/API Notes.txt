@@ -1,0 +1,15 @@
+Important API Notes
+
+python3 -m venv <dir-name>
+cd <dir-name>
+source bin/activate
+
+
+import urllib3
+import requests
+
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+
+METHOD = 'GET'
+
