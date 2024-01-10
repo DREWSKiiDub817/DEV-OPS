@@ -43,7 +43,7 @@
      - Enter a description for the runner
      - Enter the tags associated with the runner, separated by commas.
      - Enter any optional maintenance notes for the runner
-     - Provide the runner executor 'shell'
+     - Provide the runner executor 'PowerShell'
 
 3. Start GitLab Runner
    ```bash
